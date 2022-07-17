@@ -1,0 +1,39 @@
+{
+  "user": [
+    {
+      "firstName": "Aakash",
+      "lastName": "Paswan",
+      "email": "kaakash97092@gmail.com",
+      "address": "imli tola near bazaar samity",
+      "id": 1
+    },
+    {
+      "firstName": "Aakash",
+      "lastName": "Paswan",
+      "email": "kaakash97092@gmail.com",
+      "address": "imli tola near bazaar samity",
+      "id": 2
+    },
+    {
+      "firstName": "Aakash",
+      "lastName": "Paswan",
+      "email": "kaakash97092@gmail.com",
+      "address": "imli tola near bazaar samity",
+      "id": 3
+    },
+    {
+      "firstName": "akki",
+      "lastName": "sidnc",
+      "email": "sicm@gmail.com",
+      "address": "soxjso",
+      "id": 4
+    },
+    {
+      "firstName": "madhu",
+      "lastName": "kumari",
+      "email": "madhu@gmail.com",
+      "address": "ajndasmx",
+      "id": 5
+    }
+  ]
+}

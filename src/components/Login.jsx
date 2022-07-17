@@ -1,8 +1,24 @@
 import { Formik } from "formik";
 import { useState } from "react";
 import { Input } from "@material-tailwind/react";
+import { useEffect } from "react";
+import axios from "axios";
 function Login() {
   const [data, setData] = useState([]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(  () => {
+   const reteriveData =async ()=>{
+    await axios.get('http://localhost:3000/user')
+    .then(res=>{
+        console.log(res.data);
+        setData(res.data)
+    })
+   }
+   reteriveData();
+    
+  }, [])
+  console.log("data", data);
   return (
     <div>
       <Formik
@@ -14,12 +30,13 @@ function Login() {
         }}
         onSubmit={(values) => {
           console.log(values);
-          // const newData = {...values}
+        //   const newData = {...values}
           setData((prevData) => [...prevData, values]);
+          axios.post('http://localhost:3000/user', values)
         }}
       >
         {({ values, handleSubmit, handleChange }) => (
-          <form className="flex w-full items-end gap-4" onSubmit={handleSubmit}>
+          <form className="flex flex-col justify-center items-center w-1/2 items-end gap-4 text-center" onSubmit={handleSubmit}>
             <Input
               variant="outlined"
               type="text"
@@ -27,6 +44,8 @@ function Login() {
               id="firstName"
               onChange={handleChange}
               value={values.fullName}
+              placeholder="First Name"
+
             />
             <Input
               variant="outlined"
@@ -59,7 +78,7 @@ function Login() {
           </form>
         )}
       </Formik>
-      <table className="min-w-full">
+      <table className="w-full">
         <thead className="border-b">
           <tr>
             <th>FirstName</th>
@@ -69,14 +88,14 @@ function Login() {
           </tr>
         </thead>
         <tbody>
-          {data.map((x) => (
-            <tr>
+          {data.map((x) => {
+           return <tr key = {x.id}>
               <td>{x.firstName}</td>
               <td>{x.lastName}</td>
               <td>{x.email}</td>
               <td>{x.address}</td>
             </tr>
-          ))}
+          })}
         </tbody>
       </table>
     </div>

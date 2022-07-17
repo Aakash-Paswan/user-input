@@ -5,7 +5,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="flex justify-center items-center w-full">
       <Login/>
     </div>
 
