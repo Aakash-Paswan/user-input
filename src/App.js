@@ -1,13 +1,14 @@
-import UserInterface from './components/UI/userInterface'
 import './App.css';
+import Login from './components/Login';
 
 function App() {
 
 
   return (
     <div className="App">
-     <UserInterface/>
+      <Login/>
     </div>
+
   );
 }
 
