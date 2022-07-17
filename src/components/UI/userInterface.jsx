@@ -13,12 +13,12 @@ function UserInterface() {
   })
 const handleChange=(event)=>{
   event.preventDefault();
-  const fieldName = event.target.getAttribute('name')
-  const newFormData ={...formData};
-  newFormData[fieldName] = event.target.value;
-  setFormData(newFormData)
-  // setFormData((prevValue)=>({...prevValue, [event.target.name] : event.target.value
-  // }))
+  // const fieldName = event.target.getAttribute('name')
+  // const newFormData ={...formData};
+  // newFormData[fieldName] = event.target.value;
+  // setFormData(newFormData)
+  setFormData((prevValue)=>({...prevValue, [event.target.name] : event.target.value
+  }))
 }
 
 const handleSubmit = (event)=>{
